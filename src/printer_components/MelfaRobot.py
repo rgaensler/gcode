@@ -29,7 +29,7 @@ class MelfaRobot(PrinterComponent):
     AXES = "XYZABC"
     INCH_IN_MM = 25.4
 
-    def __init__(self, io_client: IClient, speed_threshold=10, number_axes: int = 6, safe_return=False):
+    def __init__(self, io_client: IClient, speed_threshold=50, number_axes: int = 6, safe_return=False):
         """
         Initialises the robot.
         :param io_client: Communication object
@@ -40,7 +40,7 @@ class MelfaRobot(PrinterComponent):
         if number_axes <= 0:
             raise ValueError('Number of axes needs to be larger than zero.')
 
-        self.work_coordinate_offset_xyz = (-600, 140, -38.63)
+        self.work_coordinate_offset_xyz = (-600, 140, -38.33)
         self.joints = number_axes
         self.speed_threshold = speed_threshold
 

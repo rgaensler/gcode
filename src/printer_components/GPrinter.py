@@ -76,7 +76,7 @@ class GPrinter:
         com_client.connect()
 
         # Create mover object
-        mover = MelfaRobot(tcp_client, number_axes=6, speed_threshold=10, safe_return=safe_return)
+        mover = MelfaRobot(tcp_client, number_axes=6, safe_return=safe_return)
 
         # Create object for remaining components
         perip = Peripherals(com_client)
