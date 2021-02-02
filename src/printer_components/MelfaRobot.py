@@ -40,7 +40,7 @@ class MelfaRobot(PrinterComponent):
         if number_axes <= 0:
             raise ValueError('Number of axes needs to be larger than zero.')
 
-        self.work_coordinate_offset_xyz = (-600, 140, -38.33)
+        self.work_coordinate_offset_xyz = (-481, 160, -240.75)  # alt x=-600/-650 y=140 z=-38.35
         self.joints = number_axes
         self.speed_threshold = speed_threshold
 
@@ -86,7 +86,7 @@ class MelfaRobot(PrinterComponent):
         sleep(0.1)
         self.activate_work_coordinate(True)
 
-        self.protocol.protocol_send('EXECTOOL (-175,0,180,0,0,0)')
+        self.protocol.protocol_send('EXECTOOL (-150,0,76.26,0,0,0)')  # alter Extruder x =-175 z=180
         self.protocol.client.receive()
 
         self.protocol.protocol_send('PNRMEXTL')

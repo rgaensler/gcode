@@ -24,7 +24,7 @@ class ComClient(ThreadedClient):
     Implements a reusable client side for serial communication.
     """
 
-    BAUD_RATE = 115200
+    BAUD_RATE = 250000
     BOOT_TIME_SECONDS = 8.0
     MAX_TIME_WITHOUT_NEW_BIT = 5.0
     PARITY = serial.PARITY_NONE
